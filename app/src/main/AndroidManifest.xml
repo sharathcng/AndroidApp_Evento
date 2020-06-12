@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MyEventsDetailActivity"></activity>
+
+
         <activity android:name=".EventDetailActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".MyWallActivity" />

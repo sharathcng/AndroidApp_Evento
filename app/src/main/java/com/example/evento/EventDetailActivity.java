@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.usage.UsageEvents;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -53,7 +54,7 @@ public class EventDetailActivity extends AppCompatActivity {
     FloatingActionButton btnRise;
     Button btnRegister;
     String EventId="";
-
+    public String eveName,currentUserName;
     FirebaseDatabase database;
     DatabaseReference mRef,myRef;
 
@@ -69,6 +70,7 @@ public class EventDetailActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference("Events");
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        currentUserName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName().toString();
         myRef = database.getReference("Users").child(currentUserId).child("MyEvents");
 
         //initialize
@@ -92,7 +94,7 @@ public class EventDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(EventDetailActivity.this,"I'm in",Toast.LENGTH_SHORT).show();
-                sendNotifications();
+                sendNotification();
             }
         });
 
@@ -112,51 +114,51 @@ public class EventDetailActivity extends AppCompatActivity {
 
     }
 
-    private void sendNotifications() {
+    private void sendNotification() {
 
-        JSONObject mainObj = new JSONObject();
+        JSONObject json = new JSONObject();
         try {
-            mainObj.put("to","/Users/"+"news");
+            json.put("to","/topics/"+"news");
             JSONObject notificationObj = new JSONObject();
-            notificationObj.put("title","any title");
-            notificationObj.put("body","any body");
-            mainObj.put("notification",notificationObj);
+            notificationObj.put("title",currentUserName);
+            notificationObj.put("body","is going to attend "+eveName+" Event");
+            json.put("notification",notificationObj);
+
 
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, URL,
-                    mainObj,
+                    json,
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
 
+                            Log.d("MUR", "onResponse: ");
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-
+                    Log.d("MUR", "onError: "+error.networkResponse);
                 }
-            }){
+            }
+            ){
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
                     Map<String,String> header = new HashMap<>();
                     header.put("content-type","application/json");
-                    header.put("authorization","key=AAAAAVJ3DCk:APA91bGU77uVfiYXnOSHp4WWNllV2OVuhTfR_h_H4aFe4psCs7bxZmhnBfvTEDYGb8LX6FlJFdVydkM1Wg4XaBpm451YlSRRMOAkn459bgp8n0IHPyj0LsjcgoB9HnFElL7pk9mzkaxN");
+                    header.put("authorization","key=AAAAAVJ3DCk:APA91bHuha0AYpQue2ufYbaXy2WKgiVghZX4_rEiYDobiRZXu-DBHxvJgex18QYiGps4I2HwuGmWzuIt1W9R3gfB_P5pdC6GzfYZCFoXuzJ3jcQLd0Kp-AW30aXyn6Y6cvRdwF4whKWL");
                     return header;
-
                 }
             };
-
             mRequestQue.add(request);
-
-        }catch (JSONException e){
-
-            e.printStackTrace();
-
         }
+        catch (JSONException e)
 
+        {
+            e.printStackTrace();
+        }
     }
 
 
-    public void getDetailEvent(final String eventId) {
+    public void getDetailEvent(String eventId) {
 
         mRef.child(eventId).addValueEventListener(new ValueEventListener() {
             @Override
@@ -167,6 +169,9 @@ public class EventDetailActivity extends AppCompatActivity {
                 Picasso.get().load(event.getPoster())
                         .into(eventPoster);
                 final String poster = event.getPoster();
+
+                eveName = event.getName();
+
                 eventName.setText(event.getName());
                 eventDate.setText(event.getDate());
                 eventTime.setText(event.getTime());

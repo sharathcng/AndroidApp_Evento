@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sharath\\.gradle\\caches\\transforms-2\\files-2.1\\2d45c26e8d9abfac9b48eee0c5e13ec8\\jetified-firebase-ui-auth-2.3.0\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,186,247,302,356,414,474",
+                        "endColumns": "69,60,60,54,53,57,59,56",
+                        "endOffsets": "120,181,242,297,351,409,469,526"
+                    }
+                }
+            ]
+        }
+    ]
+}
