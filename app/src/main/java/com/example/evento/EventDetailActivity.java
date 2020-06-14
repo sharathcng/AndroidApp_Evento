@@ -2,6 +2,7 @@ package com.example.evento;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.usage.UsageEvents;
@@ -72,6 +73,10 @@ public class EventDetailActivity extends AppCompatActivity {
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         currentUserName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName().toString();
         myRef = database.getReference("Users").child(currentUserId).child("MyEvents");
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         //initialize
         eventName = findViewById(R.id.event_name);
@@ -206,5 +211,11 @@ public class EventDetailActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

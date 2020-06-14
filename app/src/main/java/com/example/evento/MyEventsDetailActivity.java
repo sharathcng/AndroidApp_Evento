@@ -1,6 +1,7 @@
 package com.example.evento;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
@@ -48,6 +49,10 @@ public class MyEventsDetailActivity extends AppCompatActivity {
         eventTime = findViewById(R.id.event_time);
         eventDescription = findViewById(R.id.event_description);
         eventPoster = findViewById(R.id.eventImg);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         collapsingToolbarLayout = findViewById(R.id.collapsing);
         collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppbar);
@@ -109,5 +114,11 @@ public class MyEventsDetailActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

@@ -1,6 +1,9 @@
 package com.example.evento;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.TaskStackBuilder;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,6 +38,9 @@ public class MyWallActivity extends AppCompatActivity {
         String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         mRef = database.getReference("Users").child(currentUserId).child("MyEvents");
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
 
         recycler_menu = findViewById(R.id.recycler_menu);
@@ -49,7 +55,7 @@ public class MyWallActivity extends AppCompatActivity {
     private void loadEvents() {
 
         adapter = new FirebaseRecyclerAdapter<Events, EventsViewHolder>(
-                Events.class,R.layout.event_list,EventsViewHolder.class,mRef
+                Events.class, R.layout.event_list, EventsViewHolder.class, mRef
         ) {
             @Override
             protected void populateViewHolder(EventsViewHolder eventsViewHolder, Events events, int i) {
@@ -61,9 +67,9 @@ public class MyWallActivity extends AppCompatActivity {
                 eventsViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(MyWallActivity.this,""+clickItem.getName(),Toast.LENGTH_SHORT).show();
-                        Intent myEvent = new Intent(MyWallActivity.this,MyEventsDetailActivity.class);
-                        myEvent.putExtra("EventId",adapter.getRef(position).getKey());
+                        Toast.makeText(MyWallActivity.this, "" + clickItem.getName(), Toast.LENGTH_SHORT).show();
+                        Intent myEvent = new Intent(MyWallActivity.this, MyEventsDetailActivity.class);
+                        myEvent.putExtra("EventId", adapter.getRef(position).getKey());
                         startActivity(myEvent);
 
                     }
@@ -75,5 +81,11 @@ public class MyWallActivity extends AppCompatActivity {
 
         recycler_menu.setAdapter(adapter);
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

@@ -100,6 +100,14 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-xhdpi\\ic_run.png"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_edit.xml.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-anydpi-v24\\ic_edit.xml"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_edit.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-hdpi\\ic_edit.png"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_time.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_time.png"
     },
@@ -152,6 +160,10 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_edit.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-xhdpi\\ic_edit.png"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
     },
@@ -166,6 +178,10 @@
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_i_am_in.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-hdpi\\ic_i_am_in.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_edit.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-mdpi\\ic_edit.png"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
@@ -202,6 +218,10 @@
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_edit.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-xxhdpi\\ic_edit.png"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable_help.png.flat",
@@ -254,6 +274,10 @@
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_border.xml.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable\\rounded_border.xml"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",

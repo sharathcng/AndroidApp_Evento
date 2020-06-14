@@ -1337,6 +1337,7 @@ drawable googleg_standard_color_18
 drawable help
 drawable ic_cancel
 drawable ic_date
+drawable ic_edit
 drawable ic_i_am_in
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
@@ -1375,6 +1376,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable profile
 drawable register
+drawable rounded_border
 drawable selection_band_overlay
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1465,6 +1467,7 @@ id calendar_days_header
 id calendar_frame
 id cancelBtn
 id cancel_button
+id cardView
 id center
 id center_horizontal
 id center_vertical
@@ -1511,6 +1514,7 @@ id dropdown_menu
 id edit_phone_number
 id edit_query
 id email
+id emailText
 id email_button
 id email_layout
 id end
@@ -1552,6 +1556,7 @@ id icon
 id icon_group
 id icon_only
 id id
+id idText
 id ifRoom
 id image
 id info
@@ -1585,6 +1590,7 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id name
+id nameText
 id name_layout
 id navigation_header_container
 id nestedScrollView

@@ -1,6 +1,7 @@
 package com.example.evento;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,7 +38,9 @@ public class EventsListActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference("Events");
 
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         recycler_menu = findViewById(R.id.recycler_menu);
         recycler_menu.setHasFixedSize(true);
@@ -77,5 +80,11 @@ public class EventsListActivity extends AppCompatActivity {
 
         recycler_menu.setAdapter(adapter);
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

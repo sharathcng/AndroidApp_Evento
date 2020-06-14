@@ -1,6 +1,7 @@
 package com.example.evento;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +19,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -31,6 +33,10 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
         imageView = findViewById(R.id.profilePic);
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);
@@ -40,13 +46,14 @@ public class ProfileActivity extends AppCompatActivity {
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 switch (v.getId()) {
                     // ...
                     case R.id.signOut:
                         signOut();
                         break;
-                }
             }
+        }
         });
 
 
@@ -68,16 +75,23 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
     private void signOut() {
+
         mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-
+                        Toast.makeText(ProfileActivity.this, "Signed out successfully",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(ProfileActivity.this,MainActivity.class);
                         startActivity(intent);
-                        Toast.makeText(ProfileActivity.this, "Signed out successfully",Toast.LENGTH_SHORT).show();
                     }
                 });
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
 }
 

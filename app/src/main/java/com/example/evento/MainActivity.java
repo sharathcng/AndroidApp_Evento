@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        //if the user is already signed in
-        //we will close this activity
-        //and take the user to profile activity
+//        if the user is already signed in
+//        we will close this activity
+//        and take the user to profile activity
         if (mAuth.getCurrentUser() != null) {
             finish();
             startActivity(new Intent(this, HomeActivity.class));
@@ -108,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(MainActivity.this,"User signed in",Toast.LENGTH_SHORT).show();
                             updateUI(user);
+                            Intent i = new Intent(MainActivity.this,HomeActivity.class);
+                            startActivity(i);
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -116,8 +118,6 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
 
-
-                        // ...
                     }
                 });
     }
