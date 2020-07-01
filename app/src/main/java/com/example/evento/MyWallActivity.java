@@ -2,84 +2,110 @@ package com.example.evento;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.TaskStackBuilder;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.Toast;
 
 import com.example.evento.Interface.ItemClickListener;
+import com.example.evento.Model.EventStatusModel;
 import com.example.evento.Model.Events;
+import com.example.evento.ViewHolder.EventStatusUpdate;
 import com.example.evento.ViewHolder.EventsViewHolder;
+import com.example.evento.common.Common;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 public class MyWallActivity extends AppCompatActivity {
 
     private RecyclerView recycler_menu;
+    RecyclerView.LayoutManager layoutManager;
 
     FirebaseDatabase database;
     DatabaseReference mRef;
-    FirebaseRecyclerAdapter<Events, EventsViewHolder> adapter;
+    FirebaseStorage storage;
+    StorageReference storageReference;
+    FirebaseRecyclerAdapter<EventStatusModel, EventStatusUpdate> adapter;
+    String currentUserId,currentUserName;
+
+    LayoutAnimationController layoutAnimationController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_wall);
 
+
         database = FirebaseDatabase.getInstance();
-        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference();
+        currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        currentUserName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName().toString();
         mRef = database.getReference("Users").child(currentUserId).child("MyEvents");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
-
-        recycler_menu = findViewById(R.id.recycler_menu);
+        layoutAnimationController = AnimationUtils.loadLayoutAnimation(getBaseContext(),R.anim.layout_item_from_left);
+        recycler_menu = findViewById(R.id.listEvents);
         recycler_menu.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager = new LinearLayoutManager(this);
         recycler_menu.setLayoutManager(layoutManager);
 
-        loadEvents();
+
+
+        loadEventStatus();
 
     }
 
-    private void loadEvents() {
+    private void loadEventStatus() {
 
-        adapter = new FirebaseRecyclerAdapter<Events, EventsViewHolder>(
-                Events.class, R.layout.event_list, EventsViewHolder.class, mRef
+        adapter = new FirebaseRecyclerAdapter<EventStatusModel, EventStatusUpdate>(
+                EventStatusModel.class,R.layout.event_list_status_layout,EventStatusUpdate.class,mRef
         ) {
             @Override
-            protected void populateViewHolder(EventsViewHolder eventsViewHolder, Events events, int i) {
+            protected void populateViewHolder(EventStatusUpdate eventStatusUpdate, EventStatusModel eventStatus, int i) {
 
-                eventsViewHolder.event_Name.setText(events.getName());
-                Picasso.get().load(events.getPoster())
-                        .into(eventsViewHolder.event_Poster);
-                final Events clickItem = events;
-                eventsViewHolder.setItemClickListener(new ItemClickListener() {
+                eventStatusUpdate.event_Name.setText(eventStatus.getName());
+                eventStatusUpdate.event_Date.setText(eventStatus.getDate());
+                eventStatusUpdate.event_Time.setText(eventStatus.getTime());
+                eventStatusUpdate.event_Status.setText(Common.convertCodeToStatus(eventStatus.getStatus()));
+                Picasso.get().load(eventStatus.getPoster())
+                        .into(eventStatusUpdate.event_Poster);
+                final EventStatusModel clickItem = eventStatus;
+                eventStatusUpdate.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(MyWallActivity.this, "" + clickItem.getName(), Toast.LENGTH_SHORT).show();
-                        Intent myEvent = new Intent(MyWallActivity.this, MyEventsDetailActivity.class);
-                        myEvent.putExtra("EventId", adapter.getRef(position).getKey());
-                        startActivity(myEvent);
+                        Toast.makeText(MyWallActivity.this,""+clickItem.getName(),Toast.LENGTH_SHORT).show();
+                        Intent eventDetail = new Intent(MyWallActivity.this,MyEventsDetailActivity.class);
+                        eventDetail.putExtra("EventId",adapter.getRef(position).getKey());
+                        startActivity(eventDetail);
 
                     }
                 });
-
-
             }
         };
-
+        adapter.notifyDataSetChanged();
         recycler_menu.setAdapter(adapter);
+        recycler_menu.setLayoutAnimation(layoutAnimationController);
 
     }
 

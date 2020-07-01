@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-31:12
 MERGED from [com.firebaseui:firebase-ui-database:1.2.0] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\d8f52678184b4ee430e640db342441fa\jetified-firebase-ui-database-1.2.0\AndroidManifest.xml:2:1-19:12
 MERGED from [com.firebaseui:firebase-ui-auth:2.3.0] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\2d45c26e8d9abfac9b48eee0c5e13ec8\jetified-firebase-ui-auth-2.3.0\AndroidManifest.xml:2:1-79:12
 MERGED from [com.google.android.material:material:1.1.0-alpha06] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\42886552187ff7e696957cefaa7a664e\material-1.1.0-alpha06\AndroidManifest.xml:17:1-24:12
@@ -81,20 +81,20 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-alpha03] C:\Users\sharat
 MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\b1187069a6790152bacde0202410e3db\jetified-savedstate-1.0.0-alpha02\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\2fd30dab4fb477146b9ee20485b5449d\lifecycle-viewmodel-2.1.0-alpha03\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\bc918020bbc60f26a2ba0d51df8e7595\jetified-transport-api-2.2.0\AndroidManifest.xml:15:1-22:12
-INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:3:5-33
 		INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-31:12
 		INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:1-31:12
 		INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:2:11-69
@@ -124,8 +124,12 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Us
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\d5a682cedb4d3857fe701725736f7c97\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:26:5-67
 	android:name
 		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:6:5-77
+	android:name
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:6:22-74
 application
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:7:5-30:19
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:8:5-29:19
 MERGED from [com.firebaseui:firebase-ui-database:1.2.0] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\d8f52678184b4ee430e640db342441fa\jetified-firebase-ui-database-1.2.0\AndroidManifest.xml:13:5-17:19
 MERGED from [com.firebaseui:firebase-ui-database:1.2.0] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\d8f52678184b4ee430e640db342441fa\jetified-firebase-ui-database-1.2.0\AndroidManifest.xml:13:5-17:19
 MERGED from [com.firebaseui:firebase-ui-auth:2.3.0] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\2d45c26e8d9abfac9b48eee0c5e13ec8\jetified-firebase-ui-auth-2.3.0\AndroidManifest.xml:15:5-77:19
@@ -199,59 +203,63 @@ MERGED from [com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\sharath\.gradle\caches\transforms-2\files-2.1\b2b51ad2129f7ae88186ad90508b79ab\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:12:9-54
 	android:icon
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:14:9-40
 activity#com.example.evento.MyEventsDetailActivity
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:14:9-69
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:15:9-60
 	android:name
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:14:19-57
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:15:19-57
 activity#com.example.evento.EventDetailActivity
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:17:9-57
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:16:9-57
 	android:name
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:17:19-54
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:16:19-54
 activity#com.example.evento.HelpActivity
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:18:9-50
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:17:9-50
 	android:name
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:18:19-47
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:17:19-47
 activity#com.example.evento.MyWallActivity
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:19:9-52
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:18:9-52
 	android:name
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:19:19-49
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:18:19-49
 activity#com.example.evento.EventsListActivity
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:20:9-56
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:19:9-56
 	android:name
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:20:19-53
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:19:19-53
 activity#com.example.evento.ProfileActivity
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:21:9-53
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:20:9-53
 	android:name
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:21:19-50
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:20:19-50
 activity#com.example.evento.HomeActivity
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:22:9-50
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:21:9-50
 	android:name
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:22:19-47
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:21:19-47
+service#com.example.evento.Service.StatusNotification
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:22:9-63
+	android:name
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:22:18-60
 activity#com.example.evento.MainActivity
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:23:9-29:20
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:23:9-28:20
 	android:name
 		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:23:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:24:13-28:29
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:24:13-27:29
 action#android.intent.action.MAIN
 ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
 		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:27:17-77
+ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:27:27-74
+		ADDED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml:26:27-74
 uses-sdk
 INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\sharath\Desktop\all projects\Evento\app\src\main\AndroidManifest.xml

@@ -64,7 +64,6 @@
         app:useCompatPadding="true"
         />
 
-
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:clipToPadding="false"
@@ -154,6 +153,35 @@
                             android:layout_weight="7"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/url"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView
+                            android:src="@drawable/ic_link"
+                            android:layout_weight="1"
+                            android:layout_width="3dp"
+                            android:layout_height="40dp"/>
+
+                        <TextView
+                            android:id="@+id/form_url"
+                            android:padding="7dp"
+                            android:text="@string/url"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:layout_weight="7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web"
                             />
 
 

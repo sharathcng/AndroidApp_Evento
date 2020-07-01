@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
 
+import com.example.evento.Service.StatusNotification;
+
 public class HomeActivity extends AppCompatActivity {
 
     GridLayout mainGrid;
@@ -24,6 +26,10 @@ public class HomeActivity extends AppCompatActivity {
         logo = findViewById(R.id.logo);
         // setSingleEvent(mainGrid);
         setSingleActivity(mainGrid);
+
+        //Register service
+        Intent service = new Intent(HomeActivity.this, StatusNotification.class);
+        startService(service);
 
 
     }

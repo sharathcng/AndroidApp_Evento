@@ -2,17 +2,19 @@ package com.example.evento.Model;
 
 public class Events {
 
-    private String name,poster,date,time,description;
+    private String name,poster,date,time,description,url,status;
 
     public Events() {
     }
 
-    public Events(String name, String poster, String date, String time, String description) {
+    public Events(String name, String poster, String date, String time, String description, String url, String status) {
         this.name = name;
         this.poster = poster;
         this.date = date;
         this.time = time;
         this.description = description;
+        this.url = url;
+        this.status = status;
     }
 
     public String getName() {
@@ -53,5 +55,21 @@ public class Events {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

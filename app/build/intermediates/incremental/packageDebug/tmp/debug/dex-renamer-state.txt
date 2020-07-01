@@ -1,4 +1,4 @@
-#Fri Jun 12 23:27:10 IST 2020
+#Tue Jun 30 14:18:22 IST 2020
 base.0=C\:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

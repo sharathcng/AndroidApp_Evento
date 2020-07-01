@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.Toast;
 
 import com.example.evento.Interface.ItemClickListener;
@@ -30,6 +32,8 @@ public class EventsListActivity extends AppCompatActivity {
     DatabaseReference mRef;
     FirebaseRecyclerAdapter<Events, EventsViewHolder> adapter;
 
+    LayoutAnimationController layoutAnimationController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +46,12 @@ public class EventsListActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
+        layoutAnimationController = AnimationUtils.loadLayoutAnimation(getBaseContext(),R.anim.layout_item_from_left);
         recycler_menu = findViewById(R.id.recycler_menu);
         recycler_menu.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recycler_menu.setLayoutManager(layoutManager);
+
 
         loadEvents();
 
@@ -79,6 +85,7 @@ public class EventsListActivity extends AppCompatActivity {
         };
 
         recycler_menu.setAdapter(adapter);
+        recycler_menu.setLayoutAnimation(layoutAnimationController);
 
     }
 

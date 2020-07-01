@@ -29,6 +29,8 @@ anim design_snackbar_in
 anim design_snackbar_out
 anim fui_slide_in_right
 anim fui_slide_out_left
+anim item_animation_from_left
+anim layout_item_from_left
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
@@ -817,6 +819,7 @@ color fui_linkColor
 color fui_transparent
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1343,6 +1346,7 @@ drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_link
 drawable ic_menu_arrow_down_black_24dp
 drawable ic_menu_arrow_up_black_24dp
 drawable ic_mtrl_checked_circle
@@ -1351,6 +1355,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_run
 drawable ic_time
+drawable icon
 drawable logo
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
@@ -1362,6 +1367,7 @@ drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
 drawable mywall
 drawable navigation_empty_icon
+drawable newlogo
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1520,9 +1526,12 @@ id email_layout
 id end
 id enterAlways
 id enterAlwaysCollapsed
+id eventDate
 id eventImg
 id eventName
 id eventPoster
+id eventStatus
+id eventTime
 id event_date
 id event_description
 id event_name
@@ -1540,6 +1549,7 @@ id filter_chip
 id fitToContents
 id fixed
 id forever
+id form_url
 id fragment_register_email
 id fragment_verify_phone
 id ghost_view
@@ -1571,6 +1581,7 @@ id left
 id light
 id line1
 id line3
+id listEvents
 id listMode
 id list_item
 id logo
@@ -1724,6 +1735,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id url
 id useLogo
 id view_offset_helper
 id visible
@@ -1820,6 +1832,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout event_list
+layout event_list_status_layout
 layout fui_activity_register_email
 layout fui_activity_register_phone
 layout fui_auth_method_picker_layout
@@ -1870,6 +1883,7 @@ layout test_toolbar_custom_background
 layout test_toolbar_elevation
 layout test_toolbar_surface
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals fui_error_weak_password
 plurals mtrl_badge_content_description
@@ -2033,6 +2047,7 @@ string search_menu_title
 string status_bar_notification_info_overflow
 string twitter_consumer_key
 string twitter_consumer_secret
+string url
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

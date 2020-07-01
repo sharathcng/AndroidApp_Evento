@@ -1,13 +1,13 @@
 package com.example.evento;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.usage.UsageEvents;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,41 +23,35 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.evento.Model.Events;
-import com.example.evento.common.Common;
+import com.example.evento.Model.RegisteredList;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.events.Event;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Method;
-import java.util.EventListener;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.google.firebase.auth.FirebaseUser.*;
-
 public class EventDetailActivity extends AppCompatActivity {
 
-    TextView eventName,eventDate,eventTime,eventDescription;
+    TextView eventName,eventDate,eventTime,eventDescription,form_url;
     ImageView eventPoster;
     CollapsingToolbarLayout collapsingToolbarLayout;
     FloatingActionButton btnRise;
     Button btnRegister;
-    String EventId="";
-    public String eveName,currentUserName;
+    String EventId="",currentUserId;
+    public String eveName,currentUserName,image;
     FirebaseDatabase database;
-    DatabaseReference mRef,myRef;
+    DatabaseReference mRef,myRef,registerRef;
 
     private RequestQueue mRequestQue;
     private String URL = "https://fcm.googleapis.com/fcm/send";
@@ -70,9 +64,11 @@ public class EventDetailActivity extends AppCompatActivity {
         //firebase connection
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference("Events");
-        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        image = FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString();
         currentUserName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName().toString();
         myRef = database.getReference("Users").child(currentUserId).child("MyEvents");
+        registerRef = database.getReference("Registrations");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -86,6 +82,8 @@ public class EventDetailActivity extends AppCompatActivity {
         eventPoster = findViewById(R.id.eventImg);
         btnRegister = findViewById(R.id.registerBtn);
         btnRise = findViewById(R.id.btnImIn);
+        form_url = findViewById(R.id.form_url);
+        form_url.setMovementMethod(LinkMovementMethod.getInstance());
 
 
         collapsingToolbarLayout = findViewById(R.id.collapsing);
@@ -98,22 +96,17 @@ public class EventDetailActivity extends AppCompatActivity {
         btnRise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(EventDetailActivity.this,"I'm in",Toast.LENGTH_SHORT).show();
+                Toast.makeText(EventDetailActivity.this, "I'm in", Toast.LENGTH_SHORT).show();
                 sendNotification();
             }
         });
 
 
-
-
-
         //get eventId from intent
-        if (getIntent() != null)
-        {
+        if (getIntent() != null) {
             EventId = getIntent().getStringExtra("EventId");
         }
-        if (!EventId.isEmpty())
-        {
+        if (!EventId.isEmpty()) {
             getDetailEvent(EventId);
         }
 
@@ -162,14 +155,12 @@ public class EventDetailActivity extends AppCompatActivity {
         }
     }
 
-
-    public void getDetailEvent(String eventId) {
-
+    public void getDetailEvent(final String eventId) {
         mRef.child(eventId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                Events event = dataSnapshot.getValue(Events.class);
+                final Events event = dataSnapshot.getValue(Events.class);
                 //set image
                 Picasso.get().load(event.getPoster())
                         .into(eventPoster);
@@ -180,30 +171,38 @@ public class EventDetailActivity extends AppCompatActivity {
                 eventName.setText(event.getName());
                 eventDate.setText(event.getDate());
                 eventTime.setText(event.getTime());
+                form_url.setText(event.getUrl());
+
                 eventDescription.setText(event.getDescription());
                 collapsingToolbarLayout.setTitle(event.getName());
                 final Events clickItem = event;
-                btnRegister.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        String name = eventName.getText().toString();
-                        String date = eventDate.getText().toString();
-                        String time = eventTime.getText().toString();
-                        String desc = eventDescription.getText().toString();
-
-                        Events data = new Events(name,poster,date,time,desc);
-                        myRef.child(name).setValue(data);
-
-                        Toast.makeText(EventDetailActivity.this,"Successfully registered to "+clickItem.getName(),Toast.LENGTH_SHORT).show();
-                        btnRegister.setTextColor(Color.WHITE);
-                        btnRegister.setText("Registered");
-
-                    }
-                });
 
 
-            }
+                    btnRegister.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            String name = eventName.getText().toString();
+                            String date = eventDate.getText().toString();
+                            String time = eventTime.getText().toString();
+                            String desc = eventDescription.getText().toString();
+                            String url = form_url.getText().toString();
+                            String status = event.getStatus();
+
+                                Events data = new Events(name, poster, date, time, desc, url, status);
+                                RegisteredList list = new RegisteredList(currentUserName,image);
+                                myRef.child(eventId).setValue(data);
+                                registerRef.child(eventId).child(currentUserId).setValue(list);
+
+                                Toast.makeText(EventDetailActivity.this, "Successfully registered to " + clickItem.getName(), Toast.LENGTH_SHORT).show();
+                                btnRegister.setTextColor(Color.WHITE);
+                                btnRegister.setText("Registered");
+
+
+
+                        }
+                    });
+                }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -218,4 +217,5 @@ public class EventDetailActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
 }

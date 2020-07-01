@@ -4,6 +4,18 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_link.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_link.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_link.xml.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_link.xml"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\anim_item_animation_from_left.xml.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\anim\\item_animation_from_left.xml"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_event_detail.xml.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\layout\\activity_event_detail.xml"
     },
@@ -24,6 +36,10 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-xxhdpi\\ic_run.png"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable\\icon.png"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mywall.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable\\mywall.png"
     },
@@ -34,6 +50,10 @@
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_i_am_in.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-xhdpi\\ic_i_am_in.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\layout_event_list_status_layout.xml.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\layout\\event_list_status_layout.xml"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable_register.jpg.flat",
@@ -68,6 +88,10 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\anim_layout_item_from_left.xml.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\anim\\layout_item_from_left.xml"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_cancel.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-hdpi\\ic_cancel.png"
     },
@@ -92,6 +116,10 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_link.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_link.png"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_help.xml.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\layout\\activity_help.xml"
     },
@@ -104,8 +132,16 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-anydpi-v24\\ic_edit.xml"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_link.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_link.png"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_edit.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-hdpi\\ic_edit.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_time.png.flat",
@@ -128,6 +164,10 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable\\corner.xml"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_date.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_date.png"
     },
@@ -138,6 +178,10 @@
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_date.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_date.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_link.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_link.png"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_time.png.flat",
@@ -152,6 +196,10 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-anydpi-v24\\ic_i_am_in.xml"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_profile.xml.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\layout\\activity_profile.xml"
     },
@@ -164,12 +212,28 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-xhdpi\\ic_edit.png"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_link.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_link.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_time.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_time.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_link.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_link.png"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_cancel.png.flat",
@@ -192,12 +256,16 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_date.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_date.png"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_run.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-mdpi\\ic_run.png"
     },
     {
-        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_date.png.flat",
-        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_date.png"
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable_newlogo.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable\\newlogo.png"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_cancel.xml.flat",
@@ -216,12 +284,12 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_edit.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\drawable-xxhdpi\\ic_edit.png"
+    },
+    {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable_help.png.flat",
