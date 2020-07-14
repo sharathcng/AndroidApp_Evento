@@ -1,32 +1,31 @@
 package com.example.evento;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.evento.common.SessionManager;
+import com.example.evento.common.login.StartingScreen;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+
+import java.util.HashMap;
 
 public class ProfileActivity extends AppCompatActivity {
 
     ImageView imageView;
-    TextView name,email,id;
-    Button signOut;
-    private GoogleSignInClient mGoogleSignInClient;
+    TextView name, email, dob, gender;
+    CollapsingToolbarLayout collapsingToolbarLayout;
+
+    SessionManager sessionManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,51 +39,45 @@ public class ProfileActivity extends AppCompatActivity {
         imageView = findViewById(R.id.profilePic);
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);
-        id = findViewById(R.id.id);
-        signOut = findViewById(R.id.signOut);
+        dob = findViewById(R.id.dob);
+        gender = findViewById(R.id.gender);
 
-        signOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                switch (v.getId()) {
-                    // ...
-                    case R.id.signOut:
-                        signOut();
-                        break;
-            }
-        }
-        });
+        collapsingToolbarLayout = findViewById(R.id.collapsing);
+        collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppbar);
+        collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppbar);
 
 
 
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-        if (acct != null) {
-            String personName = acct.getDisplayName();
-            String personEmail = acct.getEmail();
-            String personId = acct.getId();
-            Uri personPhoto = acct.getPhotoUrl();
+        sessionManager = new SessionManager(this);
+        HashMap<String, String> userDetails = sessionManager.getUserDetailFromSession();
 
-
-            name.setText(personName);
-            email.setText(personEmail);
-            id.setText(personId);
-            Glide.with(this).load(String.valueOf(personPhoto)).into(imageView);
-        }
-
+        collapsingToolbarLayout.setTitle(userDetails.get(SessionManager.KEY_USERNAME));
+        name.setText(userDetails.get(SessionManager.KEY_FULLNAME));
+        email.setText(userDetails.get(SessionManager.KEY_EMAIL));
+        dob.setText(userDetails.get(SessionManager.KEY_DATE));
+        gender.setText(userDetails.get(SessionManager.KEY_GENDER));
 
     }
-    private void signOut() {
 
-        mGoogleSignInClient.signOut()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(ProfileActivity.this, "Signed out successfully",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(ProfileActivity.this,MainActivity.class);
-                        startActivity(intent);
-                    }
-                });
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.profile_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.signout:
+                Toast.makeText(this,"Signout",Toast.LENGTH_SHORT).show();
+                sessionManager.logout();
+                Intent intent = new Intent(ProfileActivity.this, StartingScreen.class);
+                startActivity(intent);
+                finish();
+        }
+        return true;
     }
 
     @Override

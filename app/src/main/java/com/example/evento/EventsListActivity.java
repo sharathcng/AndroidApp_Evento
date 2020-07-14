@@ -1,18 +1,16 @@
 package com.example.evento;
 
-import androidx.annotation.NonNull;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
+import android.widget.Toast;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
-import android.widget.Toast;
 
 import com.example.evento.Interface.ItemClickListener;
 import com.example.evento.Model.Events;
@@ -21,8 +19,6 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
-
-import java.util.Locale;
 
 public class EventsListActivity extends AppCompatActivity {
 
@@ -40,7 +36,7 @@ public class EventsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_events_list);
 
         database = FirebaseDatabase.getInstance();
-        mRef = database.getReference("Events");
+        mRef = database.getReference("Ongoing Events");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);

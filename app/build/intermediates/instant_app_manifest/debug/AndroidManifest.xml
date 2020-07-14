@@ -25,24 +25,66 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.evento.MyEventsDetailActivity" />
-        <activity android:name="com.example.evento.EventDetailActivity" />
-        <activity android:name="com.example.evento.HelpActivity" />
-        <activity android:name="com.example.evento.MyWallActivity" />
-        <activity android:name="com.example.evento.EventsListActivity" />
-        <activity android:name="com.example.evento.ProfileActivity" />
-        <activity android:name="com.example.evento.HomeActivity" />
-
-        <service android:name="com.example.evento.Service.StatusNotification" />
-
-        <activity android:name="com.example.evento.MainActivity" >
+        <activity android:name="com.example.evento.EventsResultsActivity" />
+        <activity android:name="com.example.evento.common.login.ForgetPasswordSuccessMessage" />
+        <activity android:name="com.example.evento.common.login.SetNewPassword" />
+        <activity android:name="com.example.evento.common.login.MakeSelection" />
+        <activity android:name="com.example.evento.common.login.ForgetPassword" />
+        <activity
+            android:name="com.example.evento.common.login.VerifyOTP"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.evento.common.login.SignUpScreen3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.evento.common.login.SignUpScreen2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.evento.common.login.SignUpScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.evento.common.login.OnBoardingScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.evento.common.login.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.evento.common.login.LoginScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.evento.common.login.StartingScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.example.evento.MyEventsDetailActivity" />
+        <activity android:name="com.example.evento.EventDetailActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.evento.HelpActivity" />
+        <activity android:name="com.example.evento.MyWallActivity" />
+        <activity android:name="com.example.evento.EventsListActivity" />
+        <activity android:name="com.example.evento.ProfileActivity" />
+        <activity
+            android:name="com.example.evento.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name="com.example.evento.Service.StatusNotification" />
+
+        <activity android:name="com.example.evento.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

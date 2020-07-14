@@ -13,10 +13,19 @@
         <item name="android:textStyle">normal</item>
     </style>
 
-
     <style name="ExpandedAppbar" parent="TextAppearance.AppCompat.Title">
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="navigationTheme">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
     </style>
 
 </resources>

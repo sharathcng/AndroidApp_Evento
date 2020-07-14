@@ -12,20 +12,66 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".EventsResultsActivity"></activity>
+        <activity android:name=".common.login.ForgetPasswordSuccessMessage" />
+        <activity android:name=".common.login.SetNewPassword" />
+        <activity android:name=".common.login.MakeSelection" />
+        <activity android:name=".common.login.ForgetPassword" />
+        <activity
+            android:name=".common.login.VerifyOTP"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".common.login.SignUpScreen3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".common.login.SignUpScreen2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".common.login.SignUpScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".common.login.OnBoardingScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".common.login.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".common.login.LoginScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".common.login.StartingScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MyEventsDetailActivity" />
-        <activity android:name=".EventDetailActivity" />
+        <activity android:name=".EventDetailActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
         <activity android:name=".HelpActivity" />
         <activity android:name=".MyWallActivity" />
         <activity android:name=".EventsListActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <service android:name=".Service.StatusNotification" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

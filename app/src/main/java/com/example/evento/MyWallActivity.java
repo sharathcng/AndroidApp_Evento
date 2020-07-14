@@ -1,36 +1,30 @@
 package com.example.evento;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.TaskStackBuilder;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.evento.Interface.ItemClickListener;
 import com.example.evento.Model.EventStatusModel;
-import com.example.evento.Model.Events;
 import com.example.evento.ViewHolder.EventStatusUpdate;
-import com.example.evento.ViewHolder.EventsViewHolder;
 import com.example.evento.common.Common;
+import com.example.evento.common.SessionManager;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
 
 public class MyWallActivity extends AppCompatActivity {
 
@@ -38,11 +32,13 @@ public class MyWallActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
 
     FirebaseDatabase database;
-    DatabaseReference mRef;
+    DatabaseReference myEventsRef;
     FirebaseStorage storage;
     StorageReference storageReference;
     FirebaseRecyclerAdapter<EventStatusModel, EventStatusUpdate> adapter;
-    String currentUserId,currentUserName;
+    String phoneNo;
+
+    SessionManager sessionManager;
 
     LayoutAnimationController layoutAnimationController;
 
@@ -56,9 +52,12 @@ public class MyWallActivity extends AppCompatActivity {
 
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
-        currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        currentUserName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName().toString();
-        mRef = database.getReference("Users").child(currentUserId).child("MyEvents");
+        //session
+        sessionManager = new SessionManager(this);
+        HashMap<String, String> userDetails = sessionManager.getUserDetailFromSession();
+        phoneNo = userDetails.get(SessionManager.KEY_PHONENUMBER);
+
+        myEventsRef = database.getReference("UsersRegEvents").child(phoneNo).child("MyEvents");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -72,6 +71,7 @@ public class MyWallActivity extends AppCompatActivity {
 
 
 
+
         loadEventStatus();
 
     }
@@ -79,7 +79,7 @@ public class MyWallActivity extends AppCompatActivity {
     private void loadEventStatus() {
 
         adapter = new FirebaseRecyclerAdapter<EventStatusModel, EventStatusUpdate>(
-                EventStatusModel.class,R.layout.event_list_status_layout,EventStatusUpdate.class,mRef
+                EventStatusModel.class,R.layout.event_list_status_layout,EventStatusUpdate.class,myEventsRef
         ) {
             @Override
             protected void populateViewHolder(EventStatusUpdate eventStatusUpdate, EventStatusModel eventStatus, int i) {

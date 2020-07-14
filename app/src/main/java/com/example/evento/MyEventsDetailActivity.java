@@ -1,9 +1,6 @@
 package com.example.evento;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -12,10 +9,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.evento.Model.Events;
+import com.example.evento.common.SessionManager;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,15 +23,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+
 public class MyEventsDetailActivity extends AppCompatActivity {
 
     TextView eventName,eventDate,eventTime,eventDescription;
     ImageView eventPoster;
     Button btnCancel;
-    String EventId="";
+    String EventId="",phoneNo;
     CollapsingToolbarLayout collapsingToolbarLayout;
     FirebaseDatabase database;
-    DatabaseReference myRef;
+    DatabaseReference myEventsRef;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +43,12 @@ public class MyEventsDetailActivity extends AppCompatActivity {
 
         //firebase connection
         database = FirebaseDatabase.getInstance();
-        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        myRef = database.getReference("Users").child(currentUserId).child("MyEvents");
+        //session
+        sessionManager = new SessionManager(this);
+        HashMap<String, String> userDetails = sessionManager.getUserDetailFromSession();
+        phoneNo = userDetails.get(SessionManager.KEY_PHONENUMBER);
+
+        myEventsRef = database.getReference("UsersRegEvents").child(phoneNo).child("MyEvents");
 
         //initialize
         eventName = findViewById(R.id.event_name);
@@ -74,7 +81,7 @@ public class MyEventsDetailActivity extends AppCompatActivity {
 
     public void getDetailEvent(final String eventId) {
 
-        myRef.child(eventId).addValueEventListener(new ValueEventListener() {
+        myEventsRef.child(eventId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -96,10 +103,12 @@ public class MyEventsDetailActivity extends AppCompatActivity {
                     public void onClick(View v) {
 
                         String name = eventName.getText().toString();
-                        myRef.child(name).removeValue();
+                        myEventsRef.child(EventId).removeValue();
                         Toast.makeText(MyEventsDetailActivity.this,"Registration cancelled to "+clickItem.getName()+"\nPlease participate and show your talent to all",Toast.LENGTH_SHORT).show();
                         btnCancel.setTextColor(Color.WHITE);
                         btnCancel.setText("Cancelled");
+                        Intent eventDetail = new Intent(MyEventsDetailActivity.this,HomeActivity.class);
+                        startActivity(eventDetail);
 
                     }
                 });

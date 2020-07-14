@@ -187,7 +187,7 @@
         android:id="@+id/cancelBtn"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
+        android:layout_gravity="right|bottom"
         android:drawableRight="@drawable/ic_cancel"
         android:hint="CANCEL"
         android:background="@drawable/corner"

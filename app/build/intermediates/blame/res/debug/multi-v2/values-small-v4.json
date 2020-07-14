@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sharath\\.gradle\\caches\\transforms-2\\files-2.1\\42886552187ff7e696957cefaa7a664e\\material-1.1.0-alpha06\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\sharath\\.gradle\\caches\\transforms-2\\files-2.1\\b85b7e0481f3222852aee40ec4c0fa26\\material-1.1.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
