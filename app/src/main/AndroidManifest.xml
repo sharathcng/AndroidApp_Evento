@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EventsResultsActivity"></activity>
+        <activity android:name=".Announcements"></activity>
+        <activity android:name=".EventsResultsActivity" />
         <activity android:name=".common.login.ForgetPasswordSuccessMessage" />
         <activity android:name=".common.login.SetNewPassword" />
         <activity android:name=".common.login.MakeSelection" />

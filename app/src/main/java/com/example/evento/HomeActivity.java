@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +36,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     LinearLayout contentView;
 
     SessionManager sessionManager;
-
+    MenuItem prevMenuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Intent service = new Intent(HomeActivity.this, StatusNotification.class);
         startService(service);
 
+        sessionManager = new SessionManager(HomeActivity.this);
 
     }
 
@@ -73,7 +75,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.home);
-        sessionManager = new SessionManager(HomeActivity.this);
+
 
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,6 +146,44 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.home) {
+            Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.all_events) {
+            Intent intent = new Intent(HomeActivity.this, EventsListActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.my_events) {
+            Intent intent = new Intent(HomeActivity.this, MyWallActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.results) {
+            Intent intent = new Intent(HomeActivity.this, EventsResultsActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.announcements) {
+            Intent intent = new Intent(HomeActivity.this, Announcements.class);
+            startActivity(intent);
+
+        } else if (id == R.id.profile) {
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(intent);
+
+        }  else if (id == R.id.logout) {
+            Toast.makeText(this,"Signout",Toast.LENGTH_SHORT).show();
+            sessionManager.logout();
+            Intent intent = new Intent(HomeActivity.this, StartingScreen.class);
+            startActivity(intent);
+            finish();
+        }
+
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 

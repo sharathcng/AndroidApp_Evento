@@ -33,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("My Profile");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
@@ -77,7 +78,7 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

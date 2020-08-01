@@ -408,6 +408,10 @@
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\layout\\activity_events_list.xml"
     },
     {
+        "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_announcements.xml.flat",
+        "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\src\\main\\res\\layout\\activity_announcements.xml"
+    },
+    {
         "merged": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_calendar.png.flat",
         "source": "C:\\Users\\sharath\\Desktop\\all projects\\Evento\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_calendar.png"
     },

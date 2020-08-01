@@ -1,9 +1,9 @@
 package com.example.evento;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 
 public class HelpActivity extends AppCompatActivity {
 
@@ -13,6 +13,7 @@ public class HelpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_help);
 
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Help");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
     }

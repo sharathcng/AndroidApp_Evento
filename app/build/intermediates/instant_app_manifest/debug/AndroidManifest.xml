@@ -25,6 +25,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.evento.Announcements" />
         <activity android:name="com.example.evento.EventsResultsActivity" />
         <activity android:name="com.example.evento.common.login.ForgetPasswordSuccessMessage" />
         <activity android:name="com.example.evento.common.login.SetNewPassword" />

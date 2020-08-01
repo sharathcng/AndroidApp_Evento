@@ -70,6 +70,7 @@ public class EventDetailActivity extends AppCompatActivity {
         registerRef = database.getReference("Registrations");
 
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Event Details");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
@@ -119,7 +120,7 @@ public class EventDetailActivity extends AppCompatActivity {
          phoneNo = userDetails.get(SessionManager.KEY_PHONENUMBER);
          email = userDetails.get(SessionManager.KEY_EMAIL);
 
-        myEventsRef = database.getReference("UsersRegEvents").child(phoneNo).child("MyEvents");
+        myEventsRef = database.getReference("Users").child(phoneNo).child("MyEvents");
 
 //        thisEventId =myRef.child(EventId);
 //        thatEventId=mRef.child(EventId);
@@ -139,7 +140,7 @@ public class EventDetailActivity extends AppCompatActivity {
             json.put("to", "/topics/" + "news");
             JSONObject notificationObj = new JSONObject();
 //            notificationObj.put("title",currentUserName);
-            notificationObj.put("body", "is going to attend " + eveName + " Event");
+            notificationObj.put("body", fullName+" is going to attend " + eveName + " Event");
             json.put("notification", notificationObj);
 
 

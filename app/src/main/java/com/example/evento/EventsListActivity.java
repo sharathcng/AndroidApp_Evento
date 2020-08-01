@@ -39,6 +39,7 @@ public class EventsListActivity extends AppCompatActivity {
         mRef = database.getReference("Ongoing Events");
 
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Ongoing Events");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 

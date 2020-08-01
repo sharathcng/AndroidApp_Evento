@@ -48,7 +48,7 @@ public class MyEventsDetailActivity extends AppCompatActivity {
         HashMap<String, String> userDetails = sessionManager.getUserDetailFromSession();
         phoneNo = userDetails.get(SessionManager.KEY_PHONENUMBER);
 
-        myEventsRef = database.getReference("UsersRegEvents").child(phoneNo).child("MyEvents");
+        myEventsRef = database.getReference("Users").child(phoneNo).child("MyEvents");
 
         //initialize
         eventName = findViewById(R.id.event_name);
@@ -58,6 +58,7 @@ public class MyEventsDetailActivity extends AppCompatActivity {
         eventPoster = findViewById(R.id.eventImg);
 
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Event Details");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 

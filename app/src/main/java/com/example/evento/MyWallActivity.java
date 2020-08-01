@@ -57,9 +57,10 @@ public class MyWallActivity extends AppCompatActivity {
         HashMap<String, String> userDetails = sessionManager.getUserDetailFromSession();
         phoneNo = userDetails.get(SessionManager.KEY_PHONENUMBER);
 
-        myEventsRef = database.getReference("UsersRegEvents").child(phoneNo).child("MyEvents");
+        myEventsRef = database.getReference("Users").child(phoneNo).child("MyEvents");
 
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("My Events");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
